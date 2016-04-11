@@ -1,0 +1,23 @@
+{
+  "name": "full-moon",
+  "version": "1.0.0",
+  "description": "like a notebook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NovaYuan/full-moon.git"
+  },
+  "keywords": [
+    "love",
+    "day"
+  ],
+  "author": "yuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NovaYuan/full-moon/issues"
+  },
+  "homepage": "https://github.com/NovaYuan/full-moon#readme"
+}

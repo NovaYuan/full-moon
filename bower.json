@@ -1,0 +1,25 @@
+{
+  "name": "full-moon",
+  "homepage": "https://github.com/NovaYuan/full-moon",
+  "authors": [
+    "yuan <yuan.qiujuan@trs.com.cn>"
+  ],
+  "description": "like a notebook",
+  "main": "index.html",
+  "keywords": [
+    "remember",
+    "love",
+    "day"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": "^1.2.4"
+  }
+}
