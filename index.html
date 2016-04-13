@@ -30,21 +30,26 @@
 </div>
 <div class="bar bar-footer bar-light">
     <div class="tabs tabs-icon-left">
-        <a class="tab-item" href="#/list">
+        <a class="tab-item" href="#/list"
+           ng-class="{true: 'active', false: 'inactive'}[isList]">
             <i class="icon ion-ios-glasses"></i>
             2Y
         </a>
-        <a class="tab-item" href="#/chats">
+        <a class="tab-item" href="#/chats"
+           ng-class="{true: 'active', false: 'inactive'}[isChats]">
             <i class="icon ion-paper-airplane"></i>
             留言
         </a>
-        <a class="tab-item" href="#/setting">
+        <a class="tab-item" href="#/setting"
+           ng-class="{true: 'active', false: 'inactive'}[isSetting]">
             <i class="icon ion-gear-b"></i>
             设置
         </a>
     </div>
 </div>
+<script src="js/common.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controller/listController.js"></script>
+<script src="js/controller/settingController.js"></script>
 </body>
 </html>
