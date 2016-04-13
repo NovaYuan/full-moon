@@ -1,0 +1,15 @@
+<div class="list" ng-controller="ProfileController">
+    <label class="item item-input">
+        <span class="input-label">头像</span>
+        <input type="text">
+    </label>
+    <label class="item item-input">
+        <span class="input-label">性别</span>
+        <input type="radio" name="sex" value="man"> 男
+        <input type="radio" name="sex" value="female"> 女
+    </label>
+    <label class="item item-input">
+        <span class="input-label">出生日期</span>
+        <input type="text" name="birthday" ng-click="showDatePicker()">
+    </label>
+</div>

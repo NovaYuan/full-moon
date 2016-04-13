@@ -22,6 +22,7 @@
   "dependencies": {
     "ionic": "^1.2.4",
     "angular-route": "^1.5.3",
-    "font-awesome": "^4.6.0"
+    "font-awesome": "^4.6.0",
+    "ionic-datepicker": "^1.1.0"
   }
 }
