@@ -2,7 +2,6 @@
  * Created by yuan on 2016/4/13.
  */
 'use strict';
-//['$rootScope', '$scope','$ionicActionSheet', '$ionicPopover', '$timeout', 'ionicDatePicker', '$location',
     angular.module("myApp").controller("ProfileController",function($rootScope, $scope, $ionicActionSheet, $ionicPopover, $timeout, ionicDatePicker, $location){
 
     $rootScope.isSetting = true;

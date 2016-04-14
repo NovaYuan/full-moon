@@ -5,7 +5,8 @@
 var app = angular.module("myApp", [
     "ionic",
     "ionic-datepicker",
-    "ngRoute"
+    "ngRoute",
+    "ngCordova"
 ]);
 
 app.run(function($ionicPlatform) {
@@ -52,4 +53,8 @@ app.config(function(ionicDatePickerProvider){
     };
 
     ionicDatePickerProvider.configDatePicker(datePickerOpt);
+});
+
+app.constant('$ionicLoadingConfig', {
+    template: '默认加载模板......'
 });
