@@ -2,7 +2,7 @@
  * Created by yuan on 2016/4/12.
  */
 'use strict';
-angular.module("myApp").controller("ListController",['$rootScope', '$scope','$ionicActionSheet', '$ionicPopover', '$timeout' , function($rootScope, $scope, $ionicActionSheet, $ionicPopover, $timeout){
+angular.module("myApp").controller("ListController", function($rootScope, $scope, $ionicActionSheet, $ionicPopover, $timeout){
 
     $rootScope.isList = true;
     $rootScope.isSetting = false;
@@ -53,4 +53,4 @@ angular.module("myApp").controller("ListController",['$rootScope', '$scope','$io
             }
         });
     };
-}]);
+});

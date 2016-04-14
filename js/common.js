@@ -29,7 +29,7 @@ var formateDate = function(num, isSimple, isText, splitLine) {
         }
 
         if(isText){
-            return year + "Äê" + month + "ÔÂ" + days + "ÈÕ " + hours + ":" + minutes + ":" + seconds;
+            return year + "å¹´" + month + "æœˆ" + days + "æ—¥" + hours + ":" + minutes + ":" + seconds;
         }else if(splitLine){
             return year + splitLine + month + splitLine + days + " " + hours + splitLine + minutes + splitLine + seconds;
         }else{
@@ -37,7 +37,7 @@ var formateDate = function(num, isSimple, isText, splitLine) {
         }
     }else{
         if(isText){
-            return year + "Äê" + month + "ÔÂ" + days + "ÈÕ";
+            return year + "å¹´" + month + "æœˆ" + days + "æ—¥";
         }else if(splitLine){
             return year + splitLine + month + splitLine + days;
         }else{

@@ -30,10 +30,7 @@ app.config(["$routeProvider", function($routeProvider){
         when('/setting', {
             templateUrl: 'templates/settings.html'
         }).
-        when('/setting/my/profile', {
-            templateUrl: 'templates/profile.html'
-        }).
-        when('/setting/mylove/profile', {
+        when('/setting/profile?:user', {
             templateUrl: 'templates/profile.html'
         }).
         otherwise({
