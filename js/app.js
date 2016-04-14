@@ -33,12 +33,15 @@ app.config(["$routeProvider", function($routeProvider){
         when('/setting/my/profile', {
             templateUrl: 'templates/profile.html'
         }).
+        when('/setting/mylove/profile', {
+            templateUrl: 'templates/profile.html'
+        }).
         otherwise({
             redirectTo: '/list'
         });
 }]);
 
-app.config(function($ionicConfigProvider, ionicDatePickerProvider){
+app.config(function(ionicDatePickerProvider){
     var datePickerOpt = {
         inputDate: new Date(),
         setLabel: '选择',
@@ -52,5 +55,4 @@ app.config(function($ionicConfigProvider, ionicDatePickerProvider){
     };
 
     ionicDatePickerProvider.configDatePicker(datePickerOpt);
-    $ionicConfigProvider.tabs.position('bottom');
 });
