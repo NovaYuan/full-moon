@@ -13,6 +13,57 @@ angular.module("myApp").controller("ProfileController",function($rootScope, $sco
         $scope.pageTitle = "Ta的资料"
     }
 
+    $scope.makeImg = function(){
+        $ionicActionSheet.show({
+            buttons: [
+                {text: '拍照上传'},
+                {text: '文件选择'}
+            ],
+            buttonClicked: function(index) {
+                if(index === 0){
+                    console.log("拍照上传");
+                    document.addEventListener("deviceready", function () {
+                        var options = {
+                            quality: 50,
+                            destinationType: Camera.DestinationType.DATA_URL,
+                            sourceType: Camera.PictureSourceType.CAMERA,
+                            allowEdit: true,
+                            encodingType: Camera.EncodingType.JPEG,
+                            targetWidth: 100,
+                            targetHeight: 100,
+                            popoverOptions: CameraPopoverOptions,
+                            saveToPhotoAlbum: false,
+                            correctOrientation:true
+                        };
+
+                        $cordovaCamera.getPicture(options).then(function(imageData) {
+                            var image = document.getElementById('myImage');
+                            image.src = "data:image/jpeg;base64," + imageData;
+                        }, function(err) {
+                            // error
+                        });
+                    }, false);
+                }else if(index === 1){
+                    console.log("文件选择");
+                    document.addEventListener("deviceready", function () {
+                        var options = {
+                            maximumImagesCount: 1,
+                            width: 800,
+                            height: 800,
+                            quality: 80
+                        };
+                        $cordovaImagePicker.getPictures(options).then(function (results) {
+                            console.log(results);
+                            $scope.imgSrc = results[0];
+                        }, function (error) {
+                            // error getting photos
+                        });
+                    }, false);
+                }
+            }
+        });
+    };
+
     $scope.showDatePicker = function (val) {
         var dateSetter = {
             callback: function (val) {
@@ -25,63 +76,4 @@ angular.module("myApp").controller("ProfileController",function($rootScope, $sco
         };
         ionicDatePicker.openDatePicker(dateSetter);
     };
-
-    $scope.pickImage = function(){
-        console.log("haha");
-        document.addEventListener("deviceready", function () {
-            var options = {
-                quality: 50,
-                destinationType: Camera.DestinationType.DATA_URL,
-                sourceType: Camera.PictureSourceType.CAMERA,
-                allowEdit: true,
-                encodingType: Camera.EncodingType.JPEG,
-                targetWidth: 100,
-                targetHeight: 100,
-                popoverOptions: CameraPopoverOptions,
-                saveToPhotoAlbum: false,
-                correctOrientation:true
-            };
-
-            $cordovaCamera.getPicture(options).then(function(imageData) {
-                var image = document.getElementById('myImage');
-                image.src = "data:image/jpeg;base64," + imageData;
-            }, function(err) {
-                // error
-            });
-        }, false);
-    };
-
-
-    //$scope.onFileSelect = function($files){
-    //    for (var i = 0; i < $files.length; i++) {
-    //        var file = $files[i];
-    //        $scope.upload = $upload.upload({
-    //            url: 'server/upload/url',
-    //            //method: 'POST' or 'PUT',
-    //            //headers: {'header-key': 'header-value'},
-    //            //withCredentials: true,
-    //            data: {myObj: $scope.myModelObj},
-    //            file: file
-    //        }).progress(function (evt) {
-    //            console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
-    //        }).success(function (data, status, headers, config) {
-    //           console.log(data);
-    //        });
-    //    }
-    //};
-    //$scope.pickImg = function(){
-    //  var options = {
-    //    maximumImagesCount: 1,
-    //    width: 800,
-    //    height: 800,
-    //    quality: 80
-    //  };
-    //  $cordovaImagePicker.getPictures(options)
-    //    .then(function (results) {
-    //      console.log(results);
-    //      $scope.imgSrc = results[0];
-    //    }, function (error) {
-    //      // error getting photos
-    //    });
-    //}
 });
