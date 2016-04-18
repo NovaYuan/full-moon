@@ -3,9 +3,10 @@
         <h1 class="title">{{pageTitle}}</h1>
     </div>
     <form class="my-profile">
-        <label class="item item-input">
+        <label class="item item-input"
+               ng-file-select="onFileSelect($files)" multiple accept="image/*">
             <span class="input-label">头像</span>
-            <input type="text">
+            <img class="portrait" src="../images/pig.jpg" />
         </label>
         <label class="item item-input item-select">
             <span class="input-label">性别</span>

@@ -1,0 +1,69 @@
+<div class="list" ng-controller="RemindController">
+  <div class="bar bar-header bar-light page-title">
+    <h1 class="title">纪念日提醒设置</h1>
+  </div>
+  <form class="my-profile">
+    <div class="item item-toggle">
+      提醒开启
+      <label class="toggle toggle-balanced">
+        <input type="checkbox" ng-model="isOpen">
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
+    </div>
+    <div class="open-setting" ng-if="isOpen">
+      <label class="item item-input item-select">
+        <span class="input-label">提前天数</span>
+        <select name="remind-days">
+          <option value="thatDay">当天</option>
+          <option value="oneDay">1</option>
+          <option value="twoDay">2</option>
+          <option value="threeDay">3</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <span class="input-label">提醒时间</span>
+        <select name="remind-time">
+          <option value="eight">08:00</option>
+          <option value="nine">09:00</option>
+          <option value="ten">10:00</option>
+          <option value="eleven">11:00</option>
+          <option value="twelve">12:00</option>
+          <option value="thirteen">13:00</option>
+          <option value="fourteen">14:00</option>
+          <option value="fifteen">15:00</option>
+          <option value="sixteen">16:00</option>
+          <option value="seventeen">17:00</option>
+          <option value="eighteen">18:00</option>
+          <option value="nineteen">19:00</option>
+          <option value="twenty">20:00</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <span class="input-label">提醒次数</span>
+        <select name="remind-times">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <span class="input-label">提醒方式</span>
+        <select name="remind-type">
+          <option value="message">短信发送</option>
+          <option value="ring">系统铃声提醒</option>
+          <option value="topMessage">状态栏消息提醒</option>
+        </select>
+      </label>
+      <button type="submit" class="button button-full button-balanced">保存</button>
+    </div>
+  </form>
+</div>

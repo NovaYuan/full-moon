@@ -6,7 +6,8 @@ var app = angular.module("myApp", [
     "ionic",
     "ionic-datepicker",
     "ngRoute",
-    "ngCordova"
+    "ngCordova",
+    "angularFileUpload"
 ]);
 
 app.run(function($ionicPlatform) {
@@ -34,6 +35,9 @@ app.config(["$routeProvider", function($routeProvider){
         when('/setting/profile?:user', {
             templateUrl: 'templates/profile.html'
         }).
+        when('/setting/remind', {
+            templateUrl: 'templates/remind.html'
+        }).
         otherwise({
             redirectTo: '/list'
         });
@@ -53,8 +57,4 @@ app.config(function(ionicDatePickerProvider){
     };
 
     ionicDatePickerProvider.configDatePicker(datePickerOpt);
-});
-
-app.constant('$ionicLoadingConfig', {
-    template: '默认加载模板......'
 });
