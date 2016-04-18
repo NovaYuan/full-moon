@@ -52,6 +52,9 @@ app.config(["$routeProvider", function($routeProvider){
         when('/setting/remind', {
             templateUrl: 'templates/remind.html'
         }).
+        when('/list/create', {
+            templateUrl: 'templates/create.html'
+        }).
         otherwise({
             redirectTo: '/list'
         });
