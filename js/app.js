@@ -10,7 +10,7 @@ var app = angular.module("myApp", [
     "angularFileUpload"
 ]);
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform, $cordovaToast) {
     $ionicPlatform.ready(function() {
         if(window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -19,6 +19,20 @@ app.run(function($ionicPlatform) {
             StatusBar.styleDefault();
         }
     });
+
+    $ionicPlatform.registerBackButtonAction(function(e){
+        if ($rootScope.backButtonPressedOnceToExit) {
+            ionic.Platform.exitApp();
+        } else {
+            $rootScope.backButtonPressedOnceToExit = true;
+            $cordovaToast.showShortTop('再按一次退出系统');
+            setTimeout(function () {
+                $rootScope.backButtonPressedOnceToExit = false;
+            }, 2000);
+        }
+        e.preventDefault();
+        return false;
+    }, 101)
 });
 
 app.config(["$routeProvider", function($routeProvider){

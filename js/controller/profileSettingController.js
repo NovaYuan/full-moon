@@ -26,8 +26,9 @@ angular.module("myApp").controller("ProfileController",function($rootScope, $sco
         ionicDatePicker.openDatePicker(dateSetter);
     };
 
-    document.addEventListener("deviceready", function () {
-        $scope.pickImg = function(){
+    $scope.pickImage = function(){
+        console.log("haha");
+        document.addEventListener("deviceready", function () {
             var options = {
                 quality: 50,
                 destinationType: Camera.DestinationType.DATA_URL,
@@ -42,13 +43,14 @@ angular.module("myApp").controller("ProfileController",function($rootScope, $sco
             };
 
             $cordovaCamera.getPicture(options).then(function(imageData) {
-              var image = document.getElementById('myImage');
-              image.src = "data:image/jpeg;base64," + imageData;
+                var image = document.getElementById('myImage');
+                image.src = "data:image/jpeg;base64," + imageData;
             }, function(err) {
-          // error
-          });
-      };
-    }, false);
+                // error
+            });
+        }, false);
+    };
+
 
     //$scope.onFileSelect = function($files){
     //    for (var i = 0; i < $files.length; i++) {
