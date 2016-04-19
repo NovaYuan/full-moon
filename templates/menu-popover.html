@@ -1,6 +1,11 @@
-<ion-popover-view>
+<ion-popover-view ng-controller="popoverController">
     <ion-list>
-        <a class="item" href="#/list/create"><i class="icon ion-compose"></i> 创建</a>
-        <ion-item><i class="icon ion-ios-rose-outline"></i> 送花</ion-item>
+        <a class="item" href="#/list/create"
+           ng-click="hidePopover()">
+            <i class="icon ion-compose"></i> 创建
+        </a>
+        <ion-item>
+            <i class="icon ion-ios-rose-outline"></i> 送花
+        </ion-item>
     </ion-list>
 </ion-popover-view>

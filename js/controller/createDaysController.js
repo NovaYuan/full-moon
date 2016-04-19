@@ -16,8 +16,4 @@ angular.module("myApp").controller("createDaysController", function($rootScope, 
 	$scope.showMenu = function($event){
 		$scope.popover.show($event);
 	};
-
-	$scope.popupCreateModal = function(){
-
-	}
 });

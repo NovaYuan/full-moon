@@ -47,14 +47,16 @@ angular.module("myApp").controller("ProfileController",function($rootScope, $sco
                     console.log("文件选择");
                     document.addEventListener("deviceready", function () {
                         var options = {
-                            maximumImagesCount: 1,
+                            maximumImagesCount: 9,
                             width: 800,
                             height: 800,
                             quality: 80
                         };
                         $cordovaImagePicker.getPictures(options).then(function (results) {
                             console.log(results);
-                            $scope.imgSrc = results[0];
+                            for (var i = 0; i < results.length; i++) {
+                                console.log('Image URI: ' + results[i]);
+                            }
                         }, function (error) {
                             // error getting photos
                         });
