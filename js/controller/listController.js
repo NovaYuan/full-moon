@@ -17,7 +17,7 @@ angular.module("myApp").controller("ListController", function($rootScope, $scope
             comments: "不仅仅是技术，更是梦想"
         },
         {
-            creatorAvatarUrl: "images/krisQ.jpg",
+            creatorAvatarUrl: "images/pig.jpg",
             creator: "yuan",
             date: formateDate(new Date(), true),
             comments: "不仅仅是技术，更是梦想"

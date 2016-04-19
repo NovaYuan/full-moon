@@ -22,5 +22,13 @@ angular.module("myApp").controller("SettingController",function($rootScope, $sco
 
             $scope.asyncDate = formateDate(new Date()) + " 更新";
         }, 3000)
-    }
+    };
+
+    $rootScope.isSimpleView = true;
+    console.log($rootScope.isSimpleView);
+
+    $scope.changeView = function(){
+        console.log($rootScope.isSimpleView)
+    };
+
 });

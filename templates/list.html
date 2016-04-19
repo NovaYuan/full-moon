@@ -1,5 +1,6 @@
 <div class="list-container" ng-controller="ListController">
     <div class="list card"
+         ng-if="!isSimpleView"
          ng-repeat="list in lists">
         <div class="item item-avatar">
             <img ng-src="{{list.creatorAvatarUrl}}">
@@ -11,18 +12,25 @@
             <img ng-if="list.imagesUrl" class="full-image" ng-src="{{list.imagesUrl}}">
             <p>{{list.comments}}</p>
             <p class="item-opts">
-                <!--<a class="subdued"-->
-                   <!--on-tap="markLike($event)"-->
-                   <!--on-hold="showWhoLike($event)">-->
-                    <!--<i class="icon ion-ios-heart-outline"></i>-->
-                <!--</a>-->
-                <!--<a href="#" class="subdued">-->
-                    <!--<i class="icon ion-ios-chatboxes-outline"></i>-->
-                <!--</a>-->
                 <a class="subdued" ng-click="share()">
                     <i class="icon ion-android-share-alt"></i>
                 </a>
             </p>
+        </div>
+    </div>
+    <div class="list simple-list"
+         ng-if="isSimpleView">
+        <div class="item item-avatar"
+           ng-repeat="list in lists">
+            <img ng-src="{{list.imagesUrl ? list.imagesUrl : list.creatorAvatarUrl}}"/>
+            <h2 class="list-creator">
+                {{list.creator}}
+                <span class="list-date">{{list.date}}</span>
+                <span class="list-share" ng-click="share()">
+                    <i class="icon ion-android-share-alt"></i>
+                </span>
+            </h2>
+            <p>{{list.comments}}</p>
         </div>
     </div>
 </div>

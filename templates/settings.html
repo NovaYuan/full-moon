@@ -36,8 +36,8 @@
         <li class="item item-icon-left item-toggle">
             <i class="icon ion-load-c"></i>
             极简模式
-            <label class="toggle toggle-balanced">
-                <input type="checkbox">
+            <label class="toggle toggle-balanced" ng-click="changeView()">
+                <input type="checkbox" ng-model="isSimpleView" name="isSimpleView">
                 <div class="track">
                     <div class="handle"></div>
                 </div>
