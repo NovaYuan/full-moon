@@ -18,11 +18,10 @@
                 纪念日提醒
             </a>
         </li>
-        <li>
-            <a class="item item-icon-left">
-                <i class="icon ion-android-sync"></i>
-                合并数据
-            </a>
+        <li class="item item-icon-left" ng-click="asyncData()">
+            <i class="icon ion-android-sync"></i>
+            合并数据
+            <span class="async-date">{{asyncDate}}</span>
         </li>
         <li class="item item-icon-left item-toggle">
             <i class="icon ion-iphone"></i>

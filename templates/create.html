@@ -4,9 +4,14 @@
             <textarea rows="6" name="content" placeholder="今天发生了什么？"></textarea>
         </label>
         <label class="item item-input add-img">
-            <button class="button button-light">
+            <button class="button button-light" ng-click="pickImages()">
                 <i class="icon ion-ios-plus-empty"></i>
             </button>
+            <ul class="img-list" ng-if="imagesList" ng-repeat="img in imagesList">
+                <li>
+                    <img ng-src="{{img.src}}"/>
+                </li>
+            </ul>
         </label>
         <label class="item item-input map-location col-10" ng-click="getLocation()">
             <span class="input-label">

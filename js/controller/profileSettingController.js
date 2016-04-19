@@ -47,7 +47,7 @@ angular.module("myApp").controller("ProfileController",function($rootScope, $sco
                     console.log("文件选择");
                     document.addEventListener("deviceready", function () {
                         var options = {
-                            maximumImagesCount: 9,
+                            maximumImagesCount: 1,
                             width: 800,
                             height: 800,
                             quality: 80
