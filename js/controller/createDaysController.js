@@ -7,6 +7,10 @@ angular.module("myApp").controller("createDaysController", function($rootScope, 
 	$rootScope.isSetting = false;
 	$rootScope.isChats = false;
 
+	$scope.popover = $ionicPopover.fromTemplateUrl('../templates/menu-popover.html', {
+		scope: $scope
+	});
+
 	$ionicPopover.fromTemplateUrl('../templates/menu-popover.html', {
 		scope: $scope
 	}).then(function(popover) {
